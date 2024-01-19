@@ -1,0 +1,17 @@
+﻿<Window x:Class="WpfAppDataBind2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppDataBind2"
+        mc:Ignorable="d"
+        Title="MainWindow" 
+        Height="150" Width="200">
+    <Window.Resources>
+        <local:Car x:Key="myCar" Speed="100"/>
+    </Window.Resources>
+    <WrapPanel>
+        <TextBox x:Name="myText" Width="100" Text="{Binding Source={StaticResource myCar}, Path=Speed}"/>
+        <Button Click="btnCheck_Click">Button</Button>
+    </WrapPanel>
+</Window>
