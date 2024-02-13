@@ -32,10 +32,10 @@ namespace WpfAppDataBind3
         }
         private void btnCheck_Click(object sender, RoutedEventArgs e)
         {
-            myCar.Speed = "200";    //INotifyPropertyChanged 동작 확인을 위해.
+            myCar.Speed = 200;    //INotifyPropertyChanged 동작 확인을 위해.
         }
     }
-    public class Notifier/* : INotifyPropertyChanged*/
+    public class Notifier : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string propertyName)
@@ -48,8 +48,8 @@ namespace WpfAppDataBind3
     }
     public class Car : Notifier
     {
-        private string _speed = "300";
-        public string Speed
+        private int _speed = 300;
+        public int Speed
         {
             get { return _speed; }
             set
