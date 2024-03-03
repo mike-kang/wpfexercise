@@ -23,7 +23,7 @@ namespace WpfAppDataBind
         public MainWindow()
         {
             InitializeComponent();
-            this.DataContext = this;
+            //this.DataContext = this;
         }
     }
 
